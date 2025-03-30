@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://hng7iewodmqc"]
+
+[ext_resource type="Script" uid="uid://doi6g1102dq1x" path="res://scenes/levels/pause.gd" id="1_f5cxw"]
+[ext_resource type="FontFile" uid="uid://c4d4cmeehh3v7" path="res://assets/fonts/04B_30__.TTF" id="2_aac20"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="pause" type="Node" parent="."]
+script = ExtResource("1_f5cxw")
+
+[node name="pausePanel" type="Panel" parent="pause"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="pause/pausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -200.5
+offset_right = 144.0
+offset_bottom = -149.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 51
+text = "GAME PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause/pausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -76.0
+offset_right = 106.5
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="resume" type="Button" parent="pause/pausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 36
+text = "RESUME"
+flat = true
+
+[node name="reset" type="Button" parent="pause/pausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 36
+text = "RESET"
+flat = true
+
+[node name="menu" type="Button" parent="pause/pausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 36
+text = "MENU"
+flat = true
+
+[node name="quit" type="Button" parent="pause/pausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 36
+text = "QUIT"
+flat = true
+
+[connection signal="pressed" from="pause/pausePanel/VBoxContainer/resume" to="pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="pause/pausePanel/VBoxContainer/reset" to="pause" method="_on_reset_pressed"]
+[connection signal="pressed" from="pause/pausePanel/VBoxContainer/menu" to="pause" method="_on_menu_pressed"]
