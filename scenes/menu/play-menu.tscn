@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi43cbiupx0s8"]
+
+[ext_resource type="Texture2D" uid="uid://deta8im8j2ylh" path="res://assets/Background/Pink.png" id="1_752b3"]
+[ext_resource type="Script" uid="uid://hv3mljicik5w" path="res://scenes/menu/play_menu.gd" id="1_rvelv"]
+[ext_resource type="Texture2D" uid="uid://b6s3qnoi8ui6r" path="res://assets/Main-Menu/cooltext479035755919443.png" id="2_rvelv"]
+[ext_resource type="FontFile" uid="uid://c4d4cmeehh3v7" path="res://assets/fonts/04B_30__.TTF" id="3_l0vnp"]
+
+[node name="Main-menu" type="Node2D"]
+script = ExtResource("1_rvelv")
+
+[node name="bg" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 366.0
+offset_bottom = 206.0
+scale = Vector2(3.165, 3.165)
+texture = ExtResource("1_752b3")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 2
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 332.0
+offset_top = 70.0
+offset_right = 787.0
+offset_bottom = 179.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rvelv")
+
+[node name="world1" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 275.0
+offset_right = 521.0
+offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("3_l0vnp")
+theme_override_font_sizes/font_size = 41
+text = "World 1"
+flat = true
+
+[node name="world2" type="Button" parent="."]
+offset_left = 600.0
+offset_top = 275.0
+offset_right = 842.0
+offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("3_l0vnp")
+theme_override_font_sizes/font_size = 41
+text = "World 2"
+flat = true
+
+[connection signal="pressed" from="world1" to="." method="_on_world_1_pressed"]
