@@ -1,2 +1,2 @@
 # Together-game
-my first game developing journey
+just a simple platformer game i made to learn the basics
